@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <!-- Botón de Geolocalización -->
   <ion-button expand="block" (click)="obtenerUbicacion()">
     Obtener Ubicación
   </ion-button>
@@ -13,4 +14,26 @@
     <p><strong>Latitud:</strong> {{ latitud }}</p>
     <p><strong>Longitud:</strong> {{ longitud }}</p>
   </div>
+
+  <hr class="ion-margin-vertical" />
+
+  <!-- Botón de Cámara -->
+  <ion-button expand="block" (click)="tomarFoto()">
+    Tomar Foto
+  </ion-button>
+
+  <!-- Imagen capturada -->
+  <img
+    *ngIf="fotoBase64"
+    [src]="'data:image/jpeg;base64,' + fotoBase64"
+    alt="Foto capturada"
+    style="width: 100%; margin-top: 10px;"
+  />
+
+  <hr class="ion-margin-vertical" />
+
+  <!-- Botón de Vibración -->
+  <ion-button expand="block" color="medium" (click)="vibrar()">
+    Vibrar Dispositivo
+  </ion-button>
 </ion-content>
